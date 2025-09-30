@@ -1,0 +1,105 @@
+.dashboard {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: var(--spacing-lg);
+  height: calc(100vh - 80px);
+  padding: var(--spacing-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.mainContent {
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  gap: var(--spacing-lg);
+  min-height: 0;
+}
+
+.chartSection {
+  min-height: 400px;
+}
+
+.tradeSection {
+  min-height: 300px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .dashboard {
+    grid-template-columns: 320px 1fr;
+    padding: var(--spacing-md);
+  }
+}
+
+@media (max-width: 968px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    height: auto;
+    min-height: calc(100vh - 80px);
+  }
+
+  .sidebar {
+    order: 1;
+  }
+
+  .mainContent {
+    order: 2;
+    grid-template-rows: auto auto;
+    min-height: 600px;
+  }
+
+  .chartSection {
+    min-height: 350px;
+  }
+
+  .tradeSection {
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: var(--spacing-sm);
+    gap: var(--spacing-md);
+  }
+
+  .mainContent {
+    gap: var(--spacing-md);
+    min-height: 500px;
+  }
+
+  .chartSection {
+    min-height: 300px;
+  }
+
+  .tradeSection {
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard {
+    padding: var(--spacing-xs);
+    gap: var(--spacing-sm);
+    height: auto;
+  }
+
+  .mainContent {
+    gap: var(--spacing-sm);
+    grid-template-rows: 300px 200px;
+  }
+
+  .chartSection {
+    min-height: 250px;
+  }
+
+  .tradeSection {
+    min-height: 180px;
+  }
+}
